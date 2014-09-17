@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Registration</title>
+</head>
+<body>
+<h1><u><font color = "Orange"> Login Page</font></h1></u> 
+
+<div id="top">
+    <h3>Login</h3>
+    <form action="/login/" method="post" accept-charset="utf-8">
+        <label for="username">Username</label><input type="text" name="uname" value="" id="username" />
+        <label for="password">Password</label><input type="password" name="pwd" value="" id="password" />
+        <input type="submit" value="Login">
+    </form>
+<font color="blue">{{msg}}</font>
+</div>
+
+<div><br />
+    <h1><u><font color = "Orange"> Registration Page</font></h1></u> 
+    
+    <form action="/EditProfile/" method="post" onsubmit="return validateForm()">
+        <p><b>            
+            User Name :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="uname" class="txtbox" width="50"><br /><br />
+            Password :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="password" name="pwd" width="40"><br /><br />
+            Date of Birth :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="date" name="dob" class="txtbox" width="100"><br /><br />
+            Gender :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female<br /><br />
+            Mobile No :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="mobile" class="txtbox" width="100"><br /><br />
+            MailID :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="mail" class="txtbox" width="50"><br /><br />
+            </b>
+            <input type="submit" align="center" value="submit" >
+        </p>
+    </form>
+</div>    
+</body>
+</html>

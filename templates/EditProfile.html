@@ -1,0 +1,89 @@
+<html>
+<body>
+
+<div>
+<h1><u><font color = "Orange"> LogFile Details</font></h1></u> 
+<font color="green">{{msg}}</font>
+<table>
+		<tr><td><b>Login Name</b></td><td><b>Date & Time</b></td></tr>
+	<tr>
+		{% for users in list %}
+			<td>{{users.Username.Username}}</td>
+			<td>{{users.Logindate}}</td>
+	</tr>
+		{% endfor %}
+</table>
+{% if uname %}	
+	{% for users in ep %}
+	<h1><u><font color = "Orange"> Edit Profile Page</font></h1></u>
+    <form action="/EditProfile_fun/{{id}}/" method="post" onsubmit="return validateForm()">
+        <p><b>            
+            User Name :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="uname" class="txtbox" width="50" value = {{users.Username}}><br /><br />
+            Password :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="password" name="pwd" width="40" value = {{users.Password}}><br /><br />
+            Date of Birth :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="date" name="dob" class="txtbox" width="100" value = {{users.DOB}}><br /><br />
+            Gender :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {% if users.Gender == 'Male' %}
+            <input type="radio" name="gender" value="Male" checked="checked">Male
+            <input type="radio" name="gender" value="Female">Female<br /><br />
+            {% else %}
+            <input type="radio" name="gender" value="Male" >Male
+            <input type="radio" name="gender" value="Female" checked="checked">Female<br /><br />
+            {% endif %}
+            Mobile No :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="mobile" class="txtbox" width="100" value = {{users.Mobile}}><br /><br />
+			EmailID :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" name="mail" class="txtbox" width="50" value = {{users.Mail}}><br /><br />
+            </b>
+            <input type="submit" align="center" value="submit" >
+        </p>
+    </form>
+	{% endfor %}
+</div>
+{% endif %}
+
+{{DOB}}
+{% for users in ep %}
+	{{users.Username}}
+	{{users.Password}}
+	{{users.DOB}}
+	{{users.Gender}}
+	{{users.Mobile}}
+	{{users.Mail}}
+{% endfor %}
+
+
+{% if username %}
+<div>
+<h1><u><font color = "Orange"> Edit Profile Page</font></h1></u>
+
+    <form action="/EditProfile_fun/{{id}}/" method="post" onsubmit="return validateForm()">
+        <p><b>            
+            User Name :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="uname" class="txtbox" width="50" value = {{username}}><br /><br />
+            Password :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="password" name="pwd" width="40" value = {{pwd}}><br /><br />
+            Date of Birth :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="date" name="dob" class="txtbox" width="100" value = {{dob}}><br /><br />
+            Gender :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {% if gender == 'Male' %}
+            <input type="radio" name="gender" value="Male" checked="checked">Male
+            <input type="radio" name="gender" value="Female">Female<br /><br />
+            {% else %}
+            <input type="radio" name="gender" value="Male" >Male
+            <input type="radio" name="gender" value="Female" checked="checked">Female<br /><br />
+            {% endif %}
+            Mobile No :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="mobile" class="txtbox" width="100" value = {{mobile}}><br /><br />
+			EmailID :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" name="mail" class="txtbox" width="50" value = {{mail}}><br /><br />
+            </b>
+            <input type="submit" align="center" value="submit" >
+        </p>
+    </form>
+</div>
+{% endif %}
+</body>
+</html>
